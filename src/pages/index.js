@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import SearchBar from "../components/searchBar"
 import { changeExample } from "../redux/actions/example"
 
 class IndexPage extends Component {
@@ -12,6 +13,10 @@ class IndexPage extends Component {
     super(props)
 
     this.state = {}
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    return null
   }
 
   handleClick() {
@@ -23,6 +28,7 @@ class IndexPage extends Component {
       <Layout>
         <SEO title="Home" />
         <h1>Hi buddies</h1>
+        <SearchBar />
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
         <button onClick={() => this.handleClick()}>Testar reducer</button>

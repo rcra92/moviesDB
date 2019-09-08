@@ -28,6 +28,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-env-variables`,
+      options: {
+        whitelist: ["API_KEY", "API_TOKEN"],
+      },
+    },
+    {
       resolve: `gatsby-plugin-react-redux`,
       options: {
         // [required] - path to your createStore module
