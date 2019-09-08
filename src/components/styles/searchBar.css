@@ -1,0 +1,19 @@
+.search-bar {
+  width: 100%;
+  background-color: #f5f5f5;
+  color: #696969;
+  border-width: 0;
+  border-radius: 30px;
+  font-size: 18;
+  padding: 10px 20px;
+  padding-left: 50px;
+  box-sizing: border-box;
+  background-image: url('../../images/finder.svg');
+  background-position: 10px 7px;
+  background-repeat: no-repeat;
+}
+
+.search-bar:focus {
+  border-width: 0;
+  outline: none;
+}

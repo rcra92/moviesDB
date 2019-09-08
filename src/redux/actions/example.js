@@ -11,7 +11,6 @@ export const changeExample = () => ({
 
 export const searchMovies = (params = {}) => dispatch => {
   dispatch({ type: types.ACTIVE_LOADING })
-  console.log(params)
   Api.searchMovies(params)
     .then(response => {
       dispatch({ type: types.SEARCH_MOVIES_SUCCESS, payload: response.data })

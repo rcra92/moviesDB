@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { Link } from "gatsby"
 
 import { changeExample, searchMovies } from "../redux/actions/example"
+import "./styles/searchBar.css"
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -24,7 +25,9 @@ class SearchBar extends React.Component {
     return (
       <div>
         <input
+          className={"search-bar"}
           type="text"
+          placeholder="Busque um filme por título"
           value={this.state.value}
           onChange={this.handleChange}
         />
