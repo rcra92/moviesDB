@@ -1,4 +1,4 @@
-import * as types from "../types/example"
+import * as types from '../types/example'
 
 const initialState = {
   example: null,
@@ -13,7 +13,7 @@ export default function(state = initialState, action) {
       const { id, content } = action.payload
       return {
         ...state,
-        example: "UHUUU!",
+        example: 'UHUUU!',
       }
     }
     case types.ACTIVE_LOADING: {
@@ -24,8 +24,8 @@ export default function(state = initialState, action) {
       return { ...state, movies: results, loading: false }
     }
     case types.SEARCH_MOVIES_FAILURE: {
-      const { error } = action.payload
-      return { ...state, error: error, loading: false }
+      console.log('>>>>>', action)
+      return { ...state, loading: false }
     }
     default:
       return state

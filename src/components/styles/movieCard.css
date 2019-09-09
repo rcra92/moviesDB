@@ -1,0 +1,43 @@
+article {
+  display: flex;
+  min-width: 100%;
+  margin-top: 40px;
+  flex-direction: row;
+}
+
+header {
+  background-color: #126193;
+  color: #59e9e4;
+  padding-top: 20px;
+  padding-left: 70px;
+  height: 20%;
+  text-align: flex-start;
+}
+
+div#body {
+  width: 100%;
+}
+
+div body {
+  background-color: #ebebeb;
+  height: 80%;
+  min-width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  article {
+    display: block;
+    min-width: 100%;
+    margin-top: 40px;
+    flex-direction: row;
+  }
+
+  figure {
+    display: flex;
+    width: 100%;
+    background-color: whitesmoke;
+    align-items: center;
+    height: auto;
+    justify-content: center;
+  }
+}

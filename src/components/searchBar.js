@@ -1,31 +1,31 @@
-import React from "react"
-import { connect } from "react-redux"
-import { Link } from "gatsby"
+import React from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'gatsby'
 
-import { changeExample, searchMovies } from "../redux/actions/example"
-import "./styles/searchBar.css"
+import { changeExample, searchMovies } from '../redux/actions/example'
+import './styles/searchBar.css'
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      value: "",
+      value: '',
     }
 
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange(event) {
-    this.setState({ value: event.target.value })
-    this.props.searchMovies({ query: event.target.value })
+  handleChange({ target: { value } }) {
+    this.setState({ value: value })
+    this.props.searchMovies({ query: value })
   }
 
   render() {
     return (
       <div>
         <input
-          className={"search-bar"}
+          className={'search-bar'}
           type="text"
           placeholder="Busque um filme por título"
           value={this.state.value}
