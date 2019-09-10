@@ -1,9 +1,11 @@
 import * as types from '../types/example'
+import _ from 'lodash'
 
 const initialState = {
   example: null,
   loading: false,
-  movies: [],
+  movies: [[]],
+  totalPages: 0,
   error: [],
 }
 
@@ -20,8 +22,15 @@ export default function(state = initialState, action) {
       return { ...state, loading: true }
     }
     case types.SEARCH_MOVIES_SUCCESS: {
-      const { results } = action.payload
-      return { ...state, movies: results, loading: false }
+      const { results, total_results, total_pages } = action.payload
+      const paginated = _.chunk(results, 5)
+      let totalPages = Math.round(total_results / 5)
+      return {
+        ...state,
+        movies: paginated,
+        totalPages: totalPages,
+        loading: false,
+      }
     }
     case types.SEARCH_MOVIES_FAILURE: {
       console.log('>>>>>', action)

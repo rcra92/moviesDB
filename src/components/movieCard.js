@@ -18,9 +18,10 @@ class MovieCard extends React.Component {
   }
 
   render() {
-    const { title, description, poster, rate, genres } = this.props
+    const { title, description, poster, rate, genres, id } = this.props
+
     return (
-      <Link to="/page-2/">
+      <Link to={`/details?id=${id}`}>
         <article>
           <figure>
             <img src={process.env.BASE_IMAGE_URL + poster} />
@@ -58,6 +59,7 @@ MovieCard.propTypes = {
   poster: PropTypes.string,
   rate: PropTypes.string,
   genres: PropTypes.array,
+  id: PropTypes.number,
 }
 
 const mapStateToProps = (state, ownProps) => ({
